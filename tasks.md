@@ -6,7 +6,7 @@ Read the following instructions and get started!
 2. On the first terminal, run `cd task_<number>` to move the lesson location.
 3. Read below and complete each of the tasks
 4. On the second terminal, run `./check.sh <number>` to verify if you have done the task correctly!
-5. One the first terminal, Use `cd ..` to return to previous directory.
+5. On the first terminal, Use `cd ..` to return to previous directory and repeat the steps for the next task!
 
 ## tasks
 ### task 1 - viewing files
@@ -16,7 +16,7 @@ Any file or folder that starts with a dot character (`.`) is treated as hidden.
 
 You can view them using the `ls -a` command. The `-a` or `--all` flag display all files.
 
-How many files and how many dirctory are in the lesson\_1 directory?
+How many normal files and how many directory are in the task\_1 directory?
 
 How many hidden files are there?
 
@@ -29,11 +29,11 @@ Create a file named `file1234.txt`
 The `mkdir <dir name>` command allows you to create new directory.
 
 Create a directory named `homework`
-Create a file named `assignment.md`
+Inside this new directory, create a file named `assignment.md`
 
 **Tips:** you can sepcify paths inside a directory with the directory name follow by a slash charater (`/`). For example: `work/monday.txt` means the file `monday.txt` inside the directory `work`.
 
-### task 5 - moving files
+### task 4 - moving files
 The `cp <source> <destination>` command allows you to copy files.
 
 Can you copy the `quiz_template.md` file and with the new name: `quiz_1.md`
@@ -49,3 +49,10 @@ The `mv` command also allows you to rename files if the given destination is not
 
 There is a file named `final_answer.txt` in the final directory, can you rename it to `.answer.txt` so that it is hidden?
 
+# task 6 - wild card
+Using the asterisk (`*`) allow us to specify a wild card. This allow you to move a large amount of files easily. For example, `*.txt` will select all files that ends with `.txt`.
+
+Inside the Desktop dir, there is a mix of random files. Using wildcard complete the following:
+- move all images ending with `.png` into a directory named: Pictures. Then move 
+- move all the videos ending with `.mp4` to the Movies dir.
+- move all files starting with `DJI` to the Drone dir.
