@@ -53,6 +53,6 @@ There is a file named `final_answer.txt` in the final directory, can you rename 
 Using the asterisk (`*`) allow us to specify a wild card. This allow you to move a large amount of files easily. For example, `*.txt` will select all files that ends with `.txt`.
 
 Inside the Desktop dir, there is a mix of random files. Using wildcard complete the following:
-- move all images ending with `.png` into a directory named: Pictures. Then move 
-- move all the videos ending with `.mp4` to the Movies dir.
 - move all files starting with `DJI` to the Drone dir.
+- move all images ending with `.png` into a directory named: Pictures.
+- move all the videos ending with `.mp4` to the Movies dir.

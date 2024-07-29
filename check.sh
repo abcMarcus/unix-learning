@@ -68,28 +68,59 @@ task4() {
 }
 
 task5() {
-  echo -e "Function 5 executed."
+  if [[ -f task_5/final/quiz_answer.txt ]]; then
+    echo -e "$RED Incorrect. $RESET quiz_answer.txt should not be in the final directory"
+    return
+  fi
+  if [[ ! -f task_5/quiz/quiz_answer.txt ]]; then
+    echo -e "$red incorrect. $reset quiz_answer.txt is not be in the quiz directory"
+    return
+  fi
+  if [[ $(cat task_5/quiz/quiz_answer.txt) != "quiz_answer12345" ]]; then
+    echo -e "$RED Incorrect. $RESET quiz_answer.txt content does not match the orginal content.\nYou might have to download the orginal files again, if you lost it."
+    return
+  fi
+
+  echo -e "Task 5 completed$GREEN successfully$RESET"
 }
 
 task6() {
-  echo -e "Function 6 executed."
+  # checking drone
+  if [[ $(ls task_6/Drone/DJI* | wc -l) -ne $(ls task_6/Drone | wc -l) ]]; then
+    echo -e "$RED Incorrect. $RESET Some files in the drone directory does not start with DJI"
+    return
+  fi
+
+  if [[ $(ls task_6/Drone/DJI* | wc -l) -ne 24 ]]; then
+    echo -e "$RED Incorrect. $RESET Not all drone files are moved to the Drone directory."
+    return
+  fi
+  
+  # checking Movies
+  if [[ $(ls task_6/Movies/2*.mp4 | wc -l) -ne $(ls task_6/Movies | wc -l) ]]; then
+    echo -e "$RED Incorrect. $RESET Some files in the Movies directory does not end with .mp4 or is drone files"
+    return
+  fi
+
+  if [[ $(ls task_6/Movies/2*.mp4 | wc -l) -ne 10 ]]; then
+    echo -e "$RED Incorrect. $RESET Not all mp4 files are moved to the Movies directory."
+    return
+  fi
+  
+  # checking Pictures
+  if [[ $(ls task_6/Pictures/2*.png | wc -l) -ne $(ls task_6/Pictures | wc -l) ]]; then
+    echo -e "$RED Incorrect. $RESET Some files in the picture directory does not end with .png or is drone files"
+    return
+  fi
+
+  if [[ $(ls task_6/Pictures/2*.png | wc -l) -ne 10 ]]; then
+    echo -e "$RED Incorrect. $RESET Not all png files are moved to the Pictures directory."
+    return
+  fi
+  
+  echo -e "Task 6 completed$GREEN successfully$RESET"
 }
 
-task7() {
-  echo -e "Function 7 executed."
-}
-
-task8() {
-  echo -e "Function 8 executed."
-}
-
-task9() {
-  echo -e "Function 9 executed."
-}
-
-task10() {
-  echo -e "Function 10 executed."
-}
 
 # Main script logic
 if [ -z "$1" ]; then
@@ -118,18 +149,6 @@ if [[ "$ARGUMENT" =~ ^[1-9]$|^10$ ]]; then
       ;;
     6)
       task6
-      ;;
-    7)
-      task7
-      ;;
-    8)
-      task8
-      ;;
-    9)
-      task9
-      ;;
-    10)
-      task10
       ;;
     *)
       echo -e "Invalid number. Please run the script again and enter a number between 1 and 10."
